@@ -1,0 +1,13 @@
+.nuxt
+.DS_Store
+node_modules/
+dist/
+build/
+logs/
+release/
+/vscode/
+tmp/
+.idea/**
+.vscode/
+npm-debug.log
+yarn-error.log
