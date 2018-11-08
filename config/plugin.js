@@ -1,7 +1,8 @@
-/**
- * Created by songpeilan on 2018/8/17.
- */
-exports.mysql = {
-    enable:true,
-    package:'egg-mysql'
-}
+'use strict';
+
+// had enabled by egg
+// exports.static = true;
+exports.sequelize = {
+    enable: true,
+    package: 'egg-sequelize',
+};
