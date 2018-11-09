@@ -13,7 +13,9 @@ module.exports = app => {
             stockIn:INTEGER, // 入库数量
             stockOut:INTEGER, // 出库数量
             stockNum:INTEGER, // 现存的库存数
-            status:INTEGER
+            status:INTEGER, // 状态 0 默认 -1已下架 1已上架
+
+            productId:INTEGER, // 产品id
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
