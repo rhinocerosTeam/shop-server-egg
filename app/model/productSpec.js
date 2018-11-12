@@ -3,7 +3,7 @@
 module.exports = app => {
     const { STRING, INTEGER ,JSON ,FLOAT } = app.Sequelize;
 
-    const product = app.model.define('productSpec',
+    const productSpec = app.model.define('productSpec',
         {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 姓名
@@ -23,5 +23,5 @@ module.exports = app => {
         }
     );
 
-    return product;
+    return productSpec;
 };

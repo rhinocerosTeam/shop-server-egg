@@ -12,9 +12,12 @@ module.exports = appInfo => {
     dialect: 'mysql',
     host: 'songpeilan.cn',
     port: 3306,
-    database: 'shop',
+    database: 'testshop',
     username: 'root',
-    password: '@pwd=123456'
+    password: '@pwd=123456',
+    define: {
+        underscored: false, //
+    },
   }
 
   return config;

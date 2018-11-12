@@ -8,7 +8,7 @@ module.exports = app => {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 姓名
             coverImg:STRING(1000), // 头像
-            productDesc:STRING(1000), // 头像
+            productDesc:STRING(1000), // 商品描述
             swiper: JSON, // 轮播图
             price:FLOAT , // 价格
             oldPrice:FLOAT , // 原价格
@@ -22,6 +22,11 @@ module.exports = app => {
             timestamps: false,
         }
     );
+
+    product.associate = function() {
+        app.model.Product.hasMany(app.model.ProductSpec, { as: 'specs' });
+    }
+
 
     return product;
 };

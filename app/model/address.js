@@ -13,7 +13,7 @@
 module.exports = app => {
     const { STRING, INTEGER ,JSON ,FLOAT } = app.Sequelize;
 
-    const address = app.model.define('address',
+    const Address = app.model.define('address',
         {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 姓名
@@ -21,8 +21,9 @@ module.exports = app => {
             country:STRING(50), // 国家
             city:STRING(500), // 城市
             prefecture:STRING(50), // 地区 ， 县城
-            address:STRING(1000), // 详细地址
+            detail:STRING(1000), // 详细地址
             status:INTEGER, // 状态 1 默认选中 0 默认未选中
+            usersId:INTEGER, // 用户id
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
@@ -30,5 +31,5 @@ module.exports = app => {
         }
     );
 
-    return address;
+    return Address;
 };

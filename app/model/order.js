@@ -14,14 +14,14 @@ module.exports = app => {
             amount:FLOAT , // 总价
             discount:FLOAT, // 优惠金额总价
             address:JSON, // 收货人信息
-            createdatetime:INTEGER, // 创建时间
-            deliveryTime:INTEGER,// 送货时间
-            paytime:INTEGER,// 发货时间
+            createdatetime:STRING, // 创建时间
+            deliveryTime:STRING,// 送货时间
+            paytime:STRING,// 发货时间
             deliveryType:INTEGER, // 送货类型 0 物流 1送货
             logisticsCompany:STRING,// 物流公司
             logisticsNumber:STRING,// 物流编号
 
-            userId:INTEGER, // 用户id
+            usersId:INTEGER, // 用户id
 
 
         },
