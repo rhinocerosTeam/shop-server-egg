@@ -5,6 +5,7 @@
  */
 module.exports = app => {
 
-    require('./router/server')(app);
+    require('./router/web')(app);
     require('./router/api')(app);
+    require('./router/miniprogram')(app);
 };

@@ -19,6 +19,9 @@ module.exports = appInfo => {
         underscored: false, //
     },
   }
+  config.jwt={
+      secret: "egg-jwt-spl"
+  }
 
   return config;
 };
