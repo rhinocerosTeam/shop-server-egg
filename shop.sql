@@ -1,3 +1,15 @@
+CREATE TABLE IF NOT EXISTS `shop`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `shopName` VARCHAR(50),
+   `shopLogo` VARCHAR(500),
+   `phone` VARCHAR(40) ,
+   `password` VARCHAR(40) ,
+   `token` VARCHAR(100) ,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 CREATE TABLE IF NOT EXISTS `users`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `name` VARCHAR(50) NOT NULL,

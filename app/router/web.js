@@ -15,7 +15,7 @@ module.exports = app => {
     router.group({ prefix: '/web' }, router => {
         // router-name: test, router-path: /pre/test2
         router.get('/', controller.home.index);
-        router.get('/login', controller.login.login);
+        router.get('/pwdLogin', controller.login.pwdLogin);
         router.get('/users', controller.users.index);
     });
 };
