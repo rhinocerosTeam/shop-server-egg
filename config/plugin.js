@@ -10,7 +10,11 @@ exports.routerGroup = {
     enable: true,
     package: 'egg-router-group',
 };
-exports.jwt = {
+exports.jwt = { // token
     enable: true,
     package: "egg-jwt"
+};
+exports.cors = { // 跨域问题
+    enable: true,
+    package: 'egg-cors',
 };
