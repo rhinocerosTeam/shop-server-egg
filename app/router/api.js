@@ -17,6 +17,8 @@ module.exports = app => {
         router.get('/', controller.home.index);
         router.get('/users', controller.users.index);
         router.get('/products', controller.product.index);
-        router.get('/uploadFile', controller.upload.uploadFile);
+       // router.get('/uploadFile', controller.upload.uploadFile);
+        router.get('/sts-auth', controller.upload.getTempKeys);
+
     });
 };
