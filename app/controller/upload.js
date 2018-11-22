@@ -38,7 +38,7 @@ class UploadController extends Controller {
         const _ctx = this.ctx
         var pathname = _ctx.request.body.pathname || _ctx.request.query.pathname || '';
         var Key = pathname.substr(0, 1) === '/' ? pathname.substr(1) : pathname;
-
+        var req = _ctx.request
         getTempKeys(function (err, tempKeys) {
             var err = null;
             var data;
