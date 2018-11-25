@@ -15,8 +15,8 @@ var config = {
     Proxy: '',
     SecretId: 'AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo', // 固定密钥
     SecretKey: 'UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF', // 固定密钥
-    Bucket: 'product-1256826840',
-    Region: 'ap-beijing',
+    Bucket: 'shop-1256826840',
+    Region: 'ap-beijing-1',
     AllowPrefix: 'test/*', // 这里改成允许的路径前缀，这里可以根据自己网站的用户登录态判断允许上传的目录，例子：* 或者 a/* 或者 a.jpg
 };
 
