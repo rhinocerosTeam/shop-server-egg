@@ -1,12 +1,13 @@
 'use strict';
 
 const Controller = require('egg').Controller;
-const paramUtil = require('../utils/param')
+const Util = require('../utils/param');
 class ProductController extends Controller {
+    
     async index() {
         const _ctx = this.ctx
         const products = await _ctx.model.Product.findAll({
-            include: { model: this.ctx.model.ProductSpec, as: 'specs' },
+            include: { model: this.ctx.model.ProductSpec, as: 'skuList' },
         })
         _ctx.body = products;
     }
@@ -23,8 +24,7 @@ class ProductController extends Controller {
     async editProduct(){
         // 封装参数
         const _ctx = this.ctx
-        let params = paramUtil.get(this.ctx)
-        console.log('params',params)
+        let params = Util.get(this.ctx)
 
         let specList = params.skuList
 
@@ -59,8 +59,19 @@ class ProductController extends Controller {
     }
     /*
      * 分页查询产品
+        
      * */
-    queryProductByPage(){
+    async queryProductByPage(){
+        const _ctx = this.ctx
+        let {pageNo,pageSize,name,productId,status} =  Util.get(_ctx)
+
+       let prod =  await _ctx.model.Product.findAndCountAll({
+           offset:(pageNo-1)*pageSize,
+           limit:pageSize,
+           include: { model: this.ctx.model.ProductSpec, as:'skuList'}})
+
+       let data = {productList:prod.rows,total:prod.count}
+       Util.success(_ctx,data)
 
     }
 

@@ -21,6 +21,7 @@ module.exports = app => {
         router.get('/users', controller.users.index);
 
         router.get('/addProduct', controller.product.editProduct);
+        router.get('/getProductList', controller.product.queryProductByPage);
 
 
 

@@ -24,7 +24,7 @@ module.exports = app => {
     );
 
     product.associate = function() {
-        app.model.Product.hasMany(app.model.ProductSpec, { as: 'specs' });
+        app.model.Product.hasMany(app.model.ProductSpec, { as: 'skuList' });
     }
 
 
