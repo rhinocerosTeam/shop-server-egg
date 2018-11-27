@@ -9,7 +9,7 @@
  - 备注一
  */
 
-export default {
+module.exports = {
 
     get(ctx){
         let data = ctx.request.query || ctx.request.body

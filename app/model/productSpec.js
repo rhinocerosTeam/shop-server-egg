@@ -8,13 +8,13 @@ module.exports = app => {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 姓名
             coverImg:STRING(1000), // 头像
+            barcode:STRING(100), // UPC码
             price:FLOAT , // 价格
             oldPrice:FLOAT , // 原价格
-            stockIn:INTEGER, // 入库数量
             stockOut:INTEGER, // 出库数量
             stockNum:INTEGER, // 现存的库存数
             status:INTEGER, // 状态 0 默认 -1已下架 1已上架
-
+            sort:INTEGER, // 排序
             productId:INTEGER, // 产品id
         },
         {
