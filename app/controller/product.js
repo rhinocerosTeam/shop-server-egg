@@ -41,26 +41,36 @@ class ProductController extends Controller {
 
 
         // 编辑/增加/删除 规格
-        let specids=[]
-        specList.map(async(obj) => {
-            obj.productId = product.id
-            if(obj.id){
-                await _ctx.model.ProductSpec.update(obj,{where: {id: obj.id}})
-                specids.push(obj.id)
-
-            }else{
-                await _ctx.model.ProductSpec.create(obj)
-            }
-        })
+        let specids = await this.productSpec(specList,product)
 
         await _ctx.model.ProductSpec.destroy({where:{id:{[Op.notIn]:specids},productId:product.id}})
-
-
 
 
         Util.success(_ctx)
 
     }
+
+    async productSpec(specList,product){
+        const _ctx = this.ctx
+        let specids=[]
+        return new Promise((resolve,reject)=>{
+            specList.map(async(obj,index) => {
+                obj.productId = product.id
+                if(obj.id){
+                    await _ctx.model.ProductSpec.update(obj,{where: {id: obj.id}})
+                    specids.push(obj.id)
+
+                }else{
+                    await _ctx.model.ProductSpec.create(obj)
+                }
+
+                if(index == specList.length-1 ){
+                    resolve(specids)
+                }
+            })
+        })
+    }
+
 
     /*
      * 删除产品
