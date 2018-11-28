@@ -19,10 +19,14 @@ module.exports = app => {
         router.get('/pwdLogin', controller.login.pwdLogin);
 
         router.get('/users', controller.users.index);
-
+        //商品管理
         router.get('/addProduct', controller.product.editProduct);
+        router.get('/editProduct', controller.product.editProduct);
+        router.get('/deleteProduct', controller.product.deleteProduct);
         router.get('/getProductList', controller.product.queryProductByPage);
-
+        router.get('/shelfProduct', controller.product.shelfProduct);
+        router.get('/sortProduct', controller.product.sortProduct);
+        router.get('/getProductDetail', controller.product.getProductDetail);
 
 
     });

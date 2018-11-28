@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = app => {
-    const { STRING, INTEGER ,JSON ,FLOAT } = app.Sequelize;
+    const { STRING, INTEGER ,JSON ,FLOAT,DATE } = app.Sequelize;
 
     const product = app.model.define('product',
         {
@@ -10,16 +10,14 @@ module.exports = app => {
             coverImg:STRING(1000), // 头像
             productDesc:STRING(1000), // 商品描述
             swiper: JSON, // 轮播图 [{imgUrl}]
-            price:FLOAT , // 价格
-            oldPrice:FLOAT , // 原价格
-            stockIn:INTEGER, // 入库数量
-            stockOut:INTEGER, // 出库数量
-            stockNum:INTEGER, // 现存的库存数
-            status:INTEGER, // 状态 0 默认 -1已下架 1已上架
+            status: INTEGER, // 状态 0 默认 -1已下架 1已上架
+            sort:INTEGER, // 排序
+            createdAt: DATE,
+            updatedAt: DATE,
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
-            timestamps: false,
+            //timestamps: false,
         }
     );
 

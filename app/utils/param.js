@@ -22,7 +22,7 @@ module.exports = {
         return {}
     },
     success(ctx,data){
-        ctx.body={code:1000,data:data,msg:""}
+        ctx.body={code:1000,data:data||null,msg:""}
     },
     fail(ctx,msg){
         ctx.body={code:1000,data:null,msg}
