@@ -1,3 +1,5 @@
+
+
 CREATE TABLE IF NOT EXISTS `shop`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `shopName` VARCHAR(50),
