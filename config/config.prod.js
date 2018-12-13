@@ -1,3 +1,6 @@
+/**
+ * Created by songpeilan on 2018/11/30.
+ */
 'use strict';
 
 module.exports = appInfo => {
@@ -12,7 +15,7 @@ module.exports = appInfo => {
         dialect: 'mysql',
         host: 'songpeilan.cn',
         port: 3306,
-        database: 'testshop',
+        database: 'shop',
         username: 'root',
         password: '@pwd=123456',
         define: {
@@ -40,9 +43,8 @@ module.exports = appInfo => {
     // node.js 性能平台
     exports.alinode = {
         // 从 `Node.js 性能平台` 获取对应的接入参数
-        appid: '77521',
-        secret: 'd3b8880888d0a9a25c5142ee5b3041cab2e0b939',
+        appid: '77520',
+        secret: '8342ac00fd95e6346537bec632febb44dfa03826',
     };
-
     return config;
 };
