@@ -10,11 +10,11 @@ module.exports = appInfo => {
     config.middleware = [];
     config.sequelize = {
         dialect: 'mysql',
-        host: 'songpeilan.cn',
+        host: 'www.bangjism.cn',
         port: 3306,
         database: 'testshop',
         username: 'root',
-        password: '@pwd=123456',
+        password: 'lan5201314',
         define: {
             underscored: false, //
         },
@@ -33,6 +33,11 @@ module.exports = appInfo => {
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
     };
     config.cos = {
+        host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
+        SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
+        SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"
+    };
+    config.oss = {
         host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
         SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
         SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"

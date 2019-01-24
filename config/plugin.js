@@ -3,7 +3,7 @@
 // had enabled by egg
 // exports.static = true;
 exports.sequelize = {
-    enable: true,
+    enable: false,
     package: 'egg-sequelize',
 };
 exports.routerGroup = {
