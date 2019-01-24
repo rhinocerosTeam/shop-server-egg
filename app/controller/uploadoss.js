@@ -21,8 +21,8 @@ class UploadossController extends Controller {
     getOssToken(){
         const _ctx = this.ctx
         const config = {
-            dirPath: '*', // 存放到哪个目录下
-            bucket: 'bangjism-test.oss-cn-beijing.aliyuncs.com',
+            dirPath: '', // 存放到哪个目录下
+            bucket: 'bangjism-test',
             region: 'oss-cn-beijing',// 我的是 hangzhou
             accessKeyId: 'LTAIeQ5vvIPOZGOb',
             accessKeySecret: 'E7gwx4idqAMW5aRbZrk1ZammcFYhCE',
@@ -50,7 +50,7 @@ class UploadossController extends Controller {
             host,
             'OSSAccessKeyId': config.accessKeyId,
             'key': expireTime,
-            'success_action_status': 201,
+            'success_action_status': 200,
             'dirPath': config.dirPath,
         })
 
