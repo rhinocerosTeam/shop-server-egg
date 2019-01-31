@@ -11,9 +11,10 @@ module.exports = appInfo => {
 
     // add your config here
     config.middleware = [];
+    // 本地的
     config.sequelize = {
         dialect: 'mysql',
-        host: 'bangjism.cn',
+        host: '127.0.0.1',
         port: 3306,
         database: 'shop',
         username: 'root',
@@ -35,15 +36,14 @@ module.exports = appInfo => {
         origin:'*',
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
     };
-    config.cos = {
-        host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
-        SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
-        SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"
-    };
     config.oss = {
-        host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
-        SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
-        SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"
+        dirPath: '', // 存放到哪个目录下
+        bucket: 'bangjism',
+        region: 'oss-cn-beijing',//
+        accessKeyId: 'LTAIeQ5vvIPOZGOb',
+        accessKeySecret: 'E7gwx4idqAMW5aRbZrk1ZammcFYhCE',
+        expAfter: 300000, // 签名失效时间，毫秒
+        maxSize: 1048576000 // 文件最大的 size
     };
     // node.js 性能平台
     exports.alinode = {

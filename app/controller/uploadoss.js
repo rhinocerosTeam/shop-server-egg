@@ -20,15 +20,18 @@ const crypto = require('crypto');
 class UploadossController extends Controller {
     getOssToken(){
         const _ctx = this.ctx
+        const ossConfigCtx = _ctx.app.config.oss
+
         const config = {
-            dirPath: '', // 存放到哪个目录下
-            bucket: 'bangjism-test',
-            region: 'oss-cn-beijing',// 我的是 hangzhou
-            accessKeyId: 'LTAIeQ5vvIPOZGOb',
-            accessKeySecret: 'E7gwx4idqAMW5aRbZrk1ZammcFYhCE',
-            expAfter: 300000, // 签名失效时间，毫秒
-            maxSize: 1048576000 // 文件最大的 size
+            dirPath: ossConfigCtx.dirPath, // 存放到哪个目录下
+            bucket: ossConfigCtx.bucket,
+            region: ossConfigCtx.region,//
+            accessKeyId: ossConfigCtx.accessKeyId,
+            accessKeySecret: ossConfigCtx.accessKeySecret,
+            expAfter: ossConfigCtx.expAfter, // 签名失效时间，毫秒
+            maxSize: ossConfigCtx.maxSize // 文件最大的 size
         }
+        console.log({config})
 
         const host = `https://${config.bucket}.${config.region}.aliyuncs.com`
         const expireTime = new Date().getTime() + config.expAfter

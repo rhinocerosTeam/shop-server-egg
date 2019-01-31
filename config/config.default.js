@@ -8,9 +8,34 @@ module.exports = appInfo => {
 
     // add your config here
     config.middleware = [];
+    // 腾讯云的
+    // config.sequelize = {
+    //     dialect: 'mysql',
+    //     host: '154.8.222.43',
+    //     port: 3306,
+    //     database: 'shop',
+    //     username: 'root',
+    //     password: 'lan5201314',
+    //     define: {
+    //         underscored: false, //
+    //     },
+    // }
+    // 群峰的
+    // config.sequelize = {
+    //     dialect: 'mysql',
+    //     host: '39.106.77.152',
+    //     port: 3306,
+    //     database: 'testshop',
+    //     username: 'root',
+    //     password: '@pwd=123456',
+    //     define: {
+    //         underscored: false, //
+    //     },
+    // }
+    // 本地的
     config.sequelize = {
         dialect: 'mysql',
-        host: 'www.bangjism.cn',
+        host: '127.0.0.1',
         port: 3306,
         database: 'testshop',
         username: 'root',
@@ -32,15 +57,14 @@ module.exports = appInfo => {
         origin:'*',
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
     };
-    config.cos = {
-        host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
-        SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
-        SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"
-    };
     config.oss = {
-        host:'https://product-1256826840.cos.ap-beijing.myqcloud.com',
-        SecretId: "AKIDvnV3QcPWCnFXfcMzPeonbEgy51pS7xTo",
-        SecretKey: "UpydDdsNn26LUUJ5h8wRp1LZdJzVuCJF"
+        dirPath: '', // 存放到哪个目录下
+        bucket: 'bangjism-test',
+        region: 'oss-cn-beijing',//
+        accessKeyId: 'LTAIeQ5vvIPOZGOb',
+        accessKeySecret: 'E7gwx4idqAMW5aRbZrk1ZammcFYhCE',
+        expAfter: 300000, // 签名失效时间，毫秒
+        maxSize: 1048576000 // 文件最大的 size
     };
     // node.js 性能平台
     exports.alinode = {

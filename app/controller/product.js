@@ -32,24 +32,32 @@ class ProductController extends Controller {
         delete params.skuList
         let product = params
 
-
         if(product.id){
             await _ctx.model.Product.update(product,{where: {id: product.id}})
         }else{
-            await _ctx.model.Product.create(product)
+           let proDoc =  await _ctx.model.Product.create(product)
+            product.id = proDoc.id
         }
-
 
         // 编辑/增加/删除 规格
         let specids = await this.productSpec(specList,product)
-
-        await _ctx.model.ProductSpec.destroy({where:{id:{[Op.notIn]:specids},productId:product.id}})
+        if(specids.length>0){
+            // 删除除去现在的规格id
+            await _ctx.model.ProductSpec.destroy({where:{id:{[Op.notIn]:specids},productId:product.id}})
+        }
 
 
         Util.success(_ctx)
 
     }
 
+    /*
+    * 编辑商品 -  编辑/增加/删除 规格
+    *
+    * @param specList 商品规格数组数据
+    * @param product 商品基本信息包括id
+    * @return ids 现在的商品规格的id数组
+    * */
     async productSpec(specList,product){
         const _ctx = this.ctx
         let specids=[]
@@ -61,7 +69,8 @@ class ProductController extends Controller {
                     specids.push(obj.id)
 
                 }else{
-                    await _ctx.model.ProductSpec.create(obj)
+                    let specDoc = await _ctx.model.ProductSpec.create(obj)
+                    specids.push(specDoc.id)
                 }
 
                 if(index == specList.length-1 ){
@@ -113,6 +122,7 @@ class ProductController extends Controller {
     async queryProductByPage() {
         const _ctx = this.ctx
         let {pageNo, pageSize, name, status} =  Util.get(_ctx)
+
         let Op = this.app.Sequelize.Op;
 
         let whereCondition = {}
