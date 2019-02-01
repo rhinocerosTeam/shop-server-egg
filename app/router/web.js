@@ -27,6 +27,11 @@ module.exports = app => {
         router.get('/shelfProduct', controller.product.shelfProduct);
         router.get('/sortProduct', controller.product.sortProduct);
         router.get('/getProductDetail', controller.product.getProductDetail);
+        // 渠道管理
+        router.get('/addChannel', controller.Channel.edit);
+        router.get('/editChannel', controller.Channel.edit);
+        router.get('/deleteChannel', controller.Channel.delete);
+        router.get('/getChannelList', controller.Channel.queryListByPage);
 
 
     });

@@ -81,3 +81,12 @@ CREATE TABLE IF NOT EXISTS `order`(
    `usersId` INT,
    PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `channel`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `name` VARCHAR(50) NOT NULL,
+   `path` VARCHAR(500),
+   `isHome`  VARCHAR(50),
+   `templates` VARCHAR(9000) ,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
