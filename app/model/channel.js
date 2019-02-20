@@ -13,13 +13,13 @@
 module.exports = app => {
     const { STRING, INTEGER ,JSON ,FLOAT } = app.Sequelize;
 
-    const Address = app.model.define('channel',
+    const channel = app.model.define('channel',
         {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 名称
             path:STRING(500), // 路径
             isHome:STRING(50), // 是否为主页
-            templates:STRING(9000), // 模板
+            templates:STRING(800), // 模板
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
@@ -27,5 +27,5 @@ module.exports = app => {
         }
     );
 
-    return Address;
+    return channel;
 };

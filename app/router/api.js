@@ -14,9 +14,9 @@ module.exports = app => {
     // prefix
     router.group({ prefix: '/api' }, router => {
         // router-name: test, router-path: /pre/test2
-        router.get('/', controller.home.index);
-        router.get('/users', controller.users.index);
-        router.get('/products', controller.product.index);
+       // // router.get('/', controller.home.index);
+       //  router.get('/users', controller.users.index);
+       //  router.get('/products', controller.product.index);
         router.get('/ossAuth', controller.uploadoss.getOssToken);
 
     });

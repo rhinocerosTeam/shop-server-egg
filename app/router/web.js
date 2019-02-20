@@ -14,7 +14,7 @@ module.exports = app => {
     // prefix
     router.group({ prefix: '/web' }, router => {
         // router-name: test, router-path: /pre/test2
-        router.get('/', controller.home.index);
+       // router.get('/', controller.home.index);
 
         router.get('/pwdLogin', controller.login.pwdLogin);
 
@@ -28,10 +28,10 @@ module.exports = app => {
         router.get('/sortProduct', controller.product.sortProduct);
         router.get('/getProductDetail', controller.product.getProductDetail);
         // 渠道管理
-        router.get('/addChannel', controller.Channel.edit);
-        router.get('/editChannel', controller.Channel.edit);
-        router.get('/deleteChannel', controller.Channel.delete);
-        router.get('/getChannelList', controller.Channel.queryListByPage);
+        // router.get('/addChannel', controller.Channel.edit);
+        // router.get('/editChannel', controller.Channel.edit);
+        // router.get('/deleteChannel', controller.Channel.delete);
+        // router.get('/getChannelList', controller.Channel.queryListByPage);
 
 
     });

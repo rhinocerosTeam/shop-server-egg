@@ -20,10 +20,7 @@ module.exports = app => {
             deliveryType:INTEGER, // 送货类型 0 物流 1送货
             logisticsCompany:STRING,// 物流公司
             logisticsNumber:STRING,// 物流编号
-
             usersId:INTEGER, // 用户id
-
-
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
