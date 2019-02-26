@@ -11,15 +11,15 @@
 'use strict';
 
 module.exports = app => {
-    const { STRING, INTEGER ,JSON ,FLOAT } = app.Sequelize;
+    const { STRING, INTEGER ,JSON ,FLOAT,BOOLEAN } = app.Sequelize;
 
     const channel = app.model.define('channel',
         {
             id: { type: INTEGER, primaryKey: true, autoIncrement: true },
             name: STRING(50), // 名称
             path:STRING(500), // 路径
-            isHome:STRING(50), // 是否为主页
-            templates:STRING(800), // 模板
+            isHome:BOOLEAN, // 是否为主页 true 是 false否
+            templates:STRING(8000), // 模板
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同

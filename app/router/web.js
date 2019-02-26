@@ -17,7 +17,6 @@ module.exports = app => {
        // router.get('/', controller.home.index);
 
         router.get('/pwdLogin', controller.login.pwdLogin);
-
         router.get('/users', controller.users.index);
         //商品管理
         router.get('/addProduct', controller.product.editProduct);
@@ -28,10 +27,11 @@ module.exports = app => {
         router.get('/sortProduct', controller.product.sortProduct);
         router.get('/getProductDetail', controller.product.getProductDetail);
         // 渠道管理
-        // router.get('/addChannel', controller.Channel.edit);
-        // router.get('/editChannel', controller.Channel.edit);
-        // router.get('/deleteChannel', controller.Channel.delete);
-        // router.get('/getChannelList', controller.Channel.queryListByPage);
+        router.get('/addChannel', controller.channel.edit);
+        router.get('/editChannel', controller.channel.edit);
+        router.get('/deleteChannel', controller.channel.delete);
+        router.get('/queryChannel', controller.channel.query);
+        router.get('/getChannelList', controller.channel.queryListByPage);
 
 
     });
