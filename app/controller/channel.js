@@ -10,7 +10,11 @@ class ChannelController extends Controller {
     async edit() {
         const _ctx = this.ctx
         let params = Util.get(_ctx)
-        console.log('------>',params)
+        // ☆ 如果频道里是否为主页 是 1 表示设置为主页，则将以前的数据的设置为主页改为默认值
+        if(params.isHome == "1"){
+            await _ctx.model.Channel.update({isHome:0},{where: {isHome: 1}})
+        }
+        // 修改或添加频道
         if(params.id){
             await _ctx.model.Channel.update(params,{where: {id: params.id}})
         }else{

@@ -20,6 +20,7 @@ module.exports = app => {
             path:STRING(500), // 路径
             isHome:BOOLEAN, // 是否为主页 true 是 false否
             templates:STRING(8000), // 模板
+
         },
         {
             freezeTableName: true, // Model 对应的表名将与model名相同
